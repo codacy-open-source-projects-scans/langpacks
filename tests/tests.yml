@@ -1,0 +1,39 @@
+- hosts: localhost
+  vars:
+  - artifacts: "{{ lookup('env', 'TEST_ARTIFACTS')|default('./artifacts', true) }}"
+  tags:
+  - classic
+  remote_user: root
+  tasks:
+  - name: Install required packages
+    dnf:
+     name:
+      - langpacks-core-hi
+      - langpacks-core-zh_CN
+
+  - name: Install the test files
+    copy: src={{ item.file }} dest=/tmp/{{ item.dest }} mode=0755
+    with_items:
+    - {file: check-default-font-installed.sh, dest: check-default-font-installed.sh }
+
+  - name: Install the test data files
+    copy: src={{ item.file }} dest=/tmp/{{ item.dest }} mode=0644
+    with_items:
+    - {file: langpacks-packages-list.txt, dest: langpacks-packages-list.txt }
+
+  - name: Test block
+    block:
+      - name: Execute the tests
+        shell: |
+          /tmp/check-default-font-installed.sh &> /tmp/test.log && result=pass || result=fail
+          echo -e "results:\n- {result: $result, test: simple}" > /tmp/results.yml
+
+    always:
+      - name: Pull out the logs
+        fetch:
+          dest: "{{ artifacts }}/"
+          src: "{{ item }}"
+          flat: yes
+        with_items:
+          - /tmp/test.log
+          - /tmp/results.yml
