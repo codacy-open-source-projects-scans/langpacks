@@ -761,6 +761,17 @@
   </component>
   <component type="font">
     <metadata_license>CC0-1.0</metadata_license>
+    <id>org.fedoraproject.default-fonts-mni</id>
+    <name>Manipuri</name>
+    <summary>Localization Font support for Manipuri</summary>
+    <description>
+      <p>
+        Core font package to install default font.
+      </p>
+    </description>
+  </component>
+  <component type="font">
+    <metadata_license>CC0-1.0</metadata_license>
     <id>org.fedoraproject.default-fonts-mr</id>
     <name>Marathi</name>
     <summary>Localization Font support for Marathi</summary>
@@ -918,6 +929,17 @@
     <id>org.fedoraproject.default-fonts-ru</id>
     <name>Russian</name>
     <summary>Localization Font support for Russian</summary>
+    <description>
+      <p>
+        Core font package to install default font.
+      </p>
+    </description>
+  </component>
+    <component type="font">
+    <metadata_license>CC0-1.0</metadata_license>
+    <id>org.fedoraproject.default-fonts-sat</id>
+    <name>Santali</name>
+    <summary>Localization Font support for Santali</summary>
     <description>
       <p>
         Core font package to install default font.

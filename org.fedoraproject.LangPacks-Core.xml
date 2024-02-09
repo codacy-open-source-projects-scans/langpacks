@@ -608,6 +608,17 @@
   </component>
   <component type="localization">
     <metadata_license>CC0-1.0</metadata_license>
+    <id>org.fedoraproject.LangPack-Core-mni</id>
+    <name>Manipuri</name>
+    <summary>Core Localization support for Manipuri</summary>
+    <description>
+      <p>
+        Core Meta-package to install default font, glibc locale and input-method if available.
+      </p>
+    </description>
+  </component>
+  <component type="localization">
+    <metadata_license>CC0-1.0</metadata_license>
     <id>org.fedoraproject.LangPack-Core-mr</id>
     <name>Marathi</name>
     <summary>Core Localization support for Marathi</summary>
@@ -776,6 +787,17 @@
     <id>org.fedoraproject.LangPack-Core-ru</id>
     <name>Russian</name>
     <summary>Core Localization support for Russian</summary>
+    <description>
+      <p>
+        Core Meta-package to install default font, glibc locale and input-method if available.
+      </p>
+    </description>
+  </component>
+   <component type="localization">
+    <metadata_license>CC0-1.0</metadata_license>
+    <id>org.fedoraproject.LangPack-Core-sat</id>
+    <name>Santali</name>
+    <summary>Core Localization support for Santali</summary>
     <description>
       <p>
         Core Meta-package to install default font, glibc locale and input-method if available.

@@ -606,6 +606,17 @@
       </p>
     </description>
   </component>
+    <component type="localization">
+    <metadata_license>CC0-1.0</metadata_license>
+    <id>org.fedoraproject.LangPack-mni</id>
+    <name>Manipuri</name>
+    <summary>Localization support for Manipuri</summary>
+    <description>
+      <p>
+        Meta-package to install available langpacks for the language available for the installed packages.
+      </p>
+    </description>
+  </component>
   <component type="localization">
     <metadata_license>CC0-1.0</metadata_license>
     <id>org.fedoraproject.LangPack-mr</id>
@@ -776,6 +787,17 @@
     <id>org.fedoraproject.LangPack-ru</id>
     <name>Russian</name>
     <summary>Localization support for Russian</summary>
+    <description>
+      <p>
+        Meta-package to install available langpacks for the language available for the installed packages.
+      </p>
+    </description>
+  </component>
+  <component type="localization">
+    <metadata_license>CC0-1.0</metadata_license>
+    <id>org.fedoraproject.LangPack-sat</id>
+    <name>Santali</name>
+    <summary>Localization support for Santali</summary>
     <description>
       <p>
         Meta-package to install available langpacks for the language available for the installed packages.

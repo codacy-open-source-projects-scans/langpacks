@@ -595,6 +595,17 @@
       </p>
     </description>
   </component>
+    <component type="font">
+    <metadata_license>CC0-1.0</metadata_license>
+    <id>org.fedoraproject.langpacks-fonts-mni</id>
+    <name>Manipuri</name>
+    <summary>Localization Font support for Manipuri</summary>
+    <description>
+      <p>
+        Metapackage to install extra fonts.
+      </p>
+    </description>
+  </component>
   <component type="font">
     <metadata_license>CC0-1.0</metadata_license>
     <id>org.fedoraproject.langpacks-fonts-mr</id>
@@ -754,6 +765,17 @@
     <id>org.fedoraproject.langpacks-fonts-ru</id>
     <name>Russian</name>
     <summary>Localization Font support for Russian</summary>
+    <description>
+      <p>
+        Metapackage to install extra fonts.
+      </p>
+    </description>
+  </component>
+    <component type="font">
+    <metadata_license>CC0-1.0</metadata_license>
+    <id>org.fedoraproject.langpacks-fonts-sat</id>
+    <name>Santali</name>
+    <summary>Localization Font support for Santali</summary>
     <description>
       <p>
         Metapackage to install extra fonts.
