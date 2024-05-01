@@ -1,6 +1,6 @@
 Name:      langpacks
 Version:   4.0
-Release:   12%{?dist}
+Release:   13%{?dist}
 Summary:   Langpacks meta-package
 
 License:   GPL-2.0-or-later
@@ -54,7 +54,24 @@ Langpack meta-package to provide individual langpacks packages.
 #
 # See defcorepkg, deffontpkg, and defmetapkg for package template
 %{lua:
-local core_font_package_list = {
+local core_font_package_list
+if tonumber(rpm.expand("0%{?rhel}")) ~= 0 and tonumber(rpm.expand("0%{?rhel}")) > 9 then
+core_font_package_list = {
+  default={
+    sans={ "redhat-text-vf-fonts", "google-noto-sans-vf-fonts" },
+    serif={ "google-noto-serif-vf-fonts" },
+    mono={ "redhat-mono-vf-fonts", "google-noto-sans-mono-vf-fonts" },
+    emoji={ "google-noto-emoji-color-fonts" },
+    math={ "google-noto-sans-math-fonts", "stix-fonts", "google-noto-sans-symbols-vf-fonts", "google-noto-sans-symbols2-fonts" }
+  },
+  cjk={
+    sans={ "google-noto-sans-cjk-vf-fonts" },
+    serif={ "google-noto-serif-cjk-vf-fonts" },
+    mono={ "google-noto-sans-mono-cjk-vf-fonts" },
+  },
+}
+else
+core_font_package_list = {
   default={
     sans={ "abattis-cantarell-vf-fonts", "google-noto-sans-vf-fonts" },
     serif={ "google-noto-serif-vf-fonts" },
@@ -68,6 +85,7 @@ local core_font_package_list = {
     mono={ "google-noto-sans-mono-cjk-vf-fonts" },
   },
 }
+end
 local langpacks_package_list = {
  { lang="af", fclang="", langname="Afrikaans", default={
                 sans="",
@@ -1641,6 +1659,9 @@ DESTDIR=%{buildroot} appstream-util split-appstream %{SOURCE2}
 DESTDIR=%{buildroot} appstream-util split-appstream %{SOURCE3}
 
 %changelog
+* Thu Apr 25 2024 Akira TAGOH <tagoh@redhat.com> - 4.0-13
+- Add some conditional for RHEL.
+
 * Fri Feb 02 2024 Parag Nemade <pnemade AT redhat DOT com> - 4.0-12
 - Added langpacks for sat and mni languages (#2259991 and #2259995)
 
