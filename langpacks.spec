@@ -1,6 +1,6 @@
 Name:      langpacks
 Version:   4.0
-Release:   13%{?dist}
+Release:   14%{?dist}
 Summary:   Langpacks meta-package
 
 License:   GPL-2.0-or-later
@@ -336,13 +336,12 @@ local langpacks_package_list = {
    },
  },
  { lang="en", fclang="", langname="English", default={
-                sans="", -- Do not add anything here. default-fonts-en is equivalent to default-fonts-core-sans 
+                sans="", -- Do not add anything here. default-fonts-en is equivalent to default-fonts-core-sans
                 serif="",
                 mono="" },
    recommends={ "liberation-sans-fonts",
                 "liberation-serif-fonts",
                 "liberation-mono-fonts",
-                "sil-mingzat-fonts",
               },
    inputmethod="",
    meta={ requires={},
@@ -536,7 +535,7 @@ local langpacks_package_list = {
                 sans="google-noto-sans-armenian-vf-fonts",
                 serif="google-noto-serif-armenian-vf-fonts",
                 mono="" },
-   recommends={ 
+   recommends={
               },
    inputmethod="",
    meta={ requires={},
@@ -1192,8 +1191,8 @@ local langpacks_package_list = {
    },
  },
  { lang="yi", fclang="", langname="Yiddish", default={
-                sans="sil-nuosu-fonts",
-                serif="",
+                sans="google-noto-sans-hebrew-vf-fonts",
+                serif="google-noto-serif-hebrew-vf-fonts",
                 mono="" },
    recommends={ "culmus-aharoni-clm-fonts",
                 "culmus-caladings-clm-fonts",
@@ -1659,6 +1658,10 @@ DESTDIR=%{buildroot} appstream-util split-appstream %{SOURCE2}
 DESTDIR=%{buildroot} appstream-util split-appstream %{SOURCE3}
 
 %changelog
+* Fri Jun  7 2024 Jens Petersen <petersen@redhat.com> - 4.0-14
+- drop sil-mingzat-fonts recommends from fonts-en
+- use Hebrew fonts for Yiddish (#2284093)
+
 * Thu Apr 25 2024 Akira TAGOH <tagoh@redhat.com> - 4.0-13
 - Add some conditional for RHEL.
 
