@@ -1,6 +1,6 @@
 Name:      langpacks
-Version:   4.0
-Release:   14%{?dist}
+Version:   4.1
+Release:   1%{?dist}
 Summary:   Langpacks meta-package
 
 License:   GPL-2.0-or-later
@@ -1350,7 +1350,7 @@ This package provides %{_langname} core langpacks packages.
   rpm.define("_fontlang " .. string.gsub(fontlang, "-", "_"))
   rpm.define("_langname " .. langname)
   if inputmethod ~= "" then
-    rpm.define("_req " .. "Requires: (" .. inputmethod .. " if xorg-x11-server-Xorg)\n")
+    rpm.define("_req " .. "Requires: (" .. inputmethod .. " if service(graphical-login))\n")
   end
   print(rpm.expand(templ))
   rpm.undefine("_lang")
@@ -1658,6 +1658,10 @@ DESTDIR=%{buildroot} appstream-util split-appstream %{SOURCE2}
 DESTDIR=%{buildroot} appstream-util split-appstream %{SOURCE3}
 
 %changelog
+* Wed Jun 19 2024 Jens Petersen <petersen@redhat.com> - 4.1-1
+- make IME installation condition on service(graphical-login)
+  instead of xorg-x11-server-Xorg (RHEL-36747)
+
 * Fri Jun  7 2024 Jens Petersen <petersen@redhat.com> - 4.0-14
 - drop sil-mingzat-fonts recommends from fonts-en
 - use Hebrew fonts for Yiddish (#2284093)
