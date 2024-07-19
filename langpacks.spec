@@ -1,6 +1,6 @@
 Name:      langpacks
 Version:   4.1
-Release:   1%{?dist}
+Release:   2%{?dist}
 Summary:   Langpacks meta-package
 
 License:   GPL-2.0-or-later
@@ -1243,7 +1243,7 @@ local langpacks_package_list = {
                 mono="" },
    recommends={
               },
-   inputmethod="ibus-libzhuyin",
+   inputmethod="ibus-chewing",
    meta={ requires={},
           recommends={ "ibus-table-chinese-cangjie",
                        "ibus-table-chinese-quick"
@@ -1658,6 +1658,10 @@ DESTDIR=%{buildroot} appstream-util split-appstream %{SOURCE2}
 DESTDIR=%{buildroot} appstream-util split-appstream %{SOURCE3}
 
 %changelog
+* Wed Jul 17 2024 Parag Nemade <pnemade AT redhat DOT com> - 4.1-2
+- zh_TW: change default inputmethod to ibus-chewing
+  https://fedoraproject.org/wiki/Changes/IBusChewingForZhTW
+
 * Wed Jun 19 2024 Jens Petersen <petersen@redhat.com> - 4.1-1
 - make IME installation condition on service(graphical-login)
   instead of xorg-x11-server-Xorg (RHEL-36747)
