@@ -1,6 +1,6 @@
 Name:      langpacks
 Version:   4.1
-Release:   2%{?dist}
+Release:   3%{?dist}
 Summary:   Langpacks meta-package
 
 License:   GPL-2.0-or-later
@@ -62,7 +62,7 @@ core_font_package_list = {
     serif={ "google-noto-serif-vf-fonts" },
     mono={ "redhat-mono-vf-fonts", "google-noto-sans-mono-vf-fonts" },
     emoji={ "google-noto-emoji-color-fonts" },
-    math={ "google-noto-sans-math-fonts", "stix-fonts", "google-noto-sans-symbols-vf-fonts", "google-noto-sans-symbols2-fonts" }
+    math={ "google-noto-sans-math-fonts", "stix-fonts", "google-noto-sans-symbols-vf-fonts", "google-noto-sans-symbols-2-fonts" }
   },
   cjk={
     sans={ "google-noto-sans-cjk-vf-fonts" },
@@ -77,7 +77,7 @@ core_font_package_list = {
     serif={ "google-noto-serif-vf-fonts" },
     mono={ "google-noto-sans-mono-vf-fonts" },
     emoji={ "google-noto-emoji-color-fonts" },
-    math={ "google-noto-sans-math-fonts", "stix-fonts", "google-noto-sans-symbols-vf-fonts", "google-noto-sans-symbols2-fonts" }
+    math={ "google-noto-sans-math-fonts", "stix-fonts", "google-noto-sans-symbols-vf-fonts", "google-noto-sans-symbols-2-fonts" }
   },
   cjk={
     sans={ "google-noto-sans-cjk-vf-fonts" },
@@ -769,7 +769,7 @@ local langpacks_package_list = {
    },
  },
  { lang="mni", fclang="", langname="Manipuri", default={
-                sans="google-noto-sans-meeteimayek-vf-fonts",
+                sans="google-noto-sans-meetei-mayek-vf-fonts",
                 serif="",
                 mono="" },
    recommends={ "",
@@ -1658,6 +1658,11 @@ DESTDIR=%{buildroot} appstream-util split-appstream %{SOURCE2}
 DESTDIR=%{buildroot} appstream-util split-appstream %{SOURCE3}
 
 %changelog
+* Tue Aug 13 2024 Akira TAGOH <tagoh@redhat.com> - 4.1-3
+- Update package names for renaming
+  google-noto-sans-symbols2-fonts -> google-noto-sans-symbols-2-fonts
+  google-noto-sans-meeteimayek-vf-fonts -> google-noto-sans-meetei-mayek-vf-fonts
+
 * Wed Jul 17 2024 Parag Nemade <pnemade AT redhat DOT com> - 4.1-2
 - zh_TW: change default inputmethod to ibus-chewing
   https://fedoraproject.org/wiki/Changes/IBusChewingForZhTW
